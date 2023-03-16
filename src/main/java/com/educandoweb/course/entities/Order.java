@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
@@ -27,6 +28,8 @@ public class Order implements Serializable{
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
 	
+	private Integer orderStatus; // Integer apenas internamente nessa classe, para outras classes continua sendo do tipo OrderStatus
+	
 	
 	// muitos para um de acordo Domain Model
 	@ManyToOne //chave estrangeira
@@ -37,10 +40,11 @@ public class Order implements Serializable{
 		
 	}
 
-	public Order(Long id, Instant moment, User client) {
+	public Order(Long id, Instant moment,OrderStatus orderStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
+		setOrderStatus(orderStatus); // alteração para poder funcionar de integer para o tipo OrderStatus
 		this.client = client;
 	}
 
@@ -62,6 +66,18 @@ public class Order implements Serializable{
 
 	public User getClient() {
 		return client;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus); // convertendo o valor interno da classe para o tipo OrderStatus
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		
+		if (orderStatus != null) {
+			this.orderStatus = orderStatus.getCode();
+		}
+		
 	}
 
 	public void setClient(User client) {
