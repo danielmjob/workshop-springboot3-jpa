@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +28,9 @@ public class User implements Serializable {
 	private String phone;
 	private String password;
 	
+	
+	// "To many" association, lazy loading, JsonIgnore
+	@JsonIgnore // importante pois para não gerar erro de loop, pois ha uma via de mão dupla entre Order e User
 	@OneToMany(mappedBy = "client") // de acordo com a variavel que esta na classe Order
 	private List<Order> orders = new ArrayList<>();
 
