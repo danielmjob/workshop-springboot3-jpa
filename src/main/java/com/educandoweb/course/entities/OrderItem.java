@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.educandoweb.course.entities.pk.OrderItemPK;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -17,7 +18,8 @@ public class OrderItem implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private OrderItemPK id; // Vindo da classe auxiliar de chave primária composta, 
+	private OrderItemPK id = new OrderItemPK(); 
+						// Vindo da classe auxiliar de chave primária composta, deve ser criada e ja instanciada 
 								//	atenção para as particularidades dela nesse código
 									// como a ausencia dela no construtor e nos gets/sets (acesso será indireto)
 	
@@ -47,6 +49,7 @@ public class OrderItem implements Serializable{
 			// ha uma forma de fazer o get e set delas conforme feito abaixo
 				// lembrando que esses gets/sets estão acessando a classe auxiliar e não as classes principais
 	
+	@JsonIgnore // para evitar loop infinito
 	public Order getOrder(){
 		return id.getOrder();
 	}
