@@ -107,6 +107,18 @@ public class Order implements Serializable{
 	public void setPayment(Payment payment) {
 		this.payment = payment;
 	}
+	
+	
+	// Deve usar o nome get no metodo devido a plataforma java enterprise só entender dessa forma
+	public Double getTotal() {
+		double sum = 0;
+		
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {
