@@ -13,6 +13,8 @@ import com.educandoweb.course.repositories.UserRepository;
 import com.educandoweb.course.services.exceptions.DatabaseException;
 import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class UserService {
 	
@@ -45,16 +47,19 @@ public class UserService {
 			throw new DatabaseException(e.getMessage());
 			
 		}
-		
-		
+	
 		
 	}
 	
 	// atualizar usuário
 	public User update(Long id, User obj) {
+		try {
 		User entity = repository.getReferenceById(id); // prepara um objeto monitorado mas não altera o banco de dados
 		updateData(entity, obj);
 		return repository.save(entity);
+		} catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
 
 	// Criado aumtomaticamente com a correção do metodo update
