@@ -10,13 +10,13 @@ Web services com Spring Boot e JPA / Hibernate é uma aplicação back-end criad
 
 ## Modelos
 
-![Domain model](https://github.com/danielmjob/baseReadme/blob/main/assets/Domain%20Model.jpg)
+![Domain model](https://github.com/danielmjob/workshop-springboot3-jpa/blob/main/assets/Domain%20Model.jpg)
 
-![Domain Instance](https://github.com/danielmjob/baseReadme/blob/main/assets/Domain%20Instance.jpg)
+![Domain Instance](https://github.com/danielmjob/workshop-springboot3-jpa/blob/main/assets/Domain%20Instance.jpg)
 
 # Tecnologias utilizadas
 
-![Tecnologias](https://github.com/danielmjob/baseReadme/blob/main/assets/Tecnologias.jpg)
+![Tecnologias](https://github.com/danielmjob/workshop-springboot3-jpa/blob/main/assets/Tecnologias.jpg)
 
 - Java
 - Spring Boot
@@ -52,7 +52,7 @@ http://localhost:8080/users
  "phone": "977557755"
 } 
 ```
-[![Inserir Usuário](https://github.com/danielmjob/baseReadme/blob/main/assets/Inserindo%20usuario.jpg)
+[![Inserir Usuário](https://github.com/danielmjob/workshop-springboot3-jpa/blob/main/assets/Inserindo%20usuario.jpg)
 
 
 ## Atualizando usuário (PUT)
@@ -86,7 +86,7 @@ Login: sa
 Senha:
 
 
-![H2](https://github.com/danielmjob/baseReadme/blob/main/assets/H2.jpg)
+![H2](https://github.com/danielmjob/workshop-springboot3-jpa/blob/main/assets/H2.jpg)
 
 <br>
 <br>
