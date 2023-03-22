@@ -4,9 +4,9 @@
 
 # Sobre o projeto
 
-Web services com Spring Boot e JPA / Hibernate é uma aplicação back-end criado durante o curso de Java na plataforma Udemy   pela equipe [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+Web services com Spring Boot e JPA / Hibernate é uma aplicação back-end criada durante o curso de Java na plataforma Udemy   pela equipe [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
-É uma aplicação back-end que integrando java com banco de dados de teste (H2), onde pode ser consultados os produtos, pedidos de cada usúario, status do pedido além de poder cadastrar, ver, atualizar e deletar usuários (CRUD).
+É uma aplicação back-end que integrando java com banco de dados de teste (H2), onde pode ser consultados os produtos, pedidos de cada usuário, status do pedido além de poder cadastrar, ver, atualizar e deletar usuários (CRUD).
 
 ## Modelos
 
